@@ -39,7 +39,13 @@
 推荐结构：
 
 ```text
-Content/
+Content/\
+  --GamePlay母文件[存放游戏的主菜单关卡]
+  --Project母文件[存放以下所有子项文件]
+  --子文件：PublicFile[颜色标记为红色，它是公共文件从，存放通用的蓝图逻辑比如关键字static类型]
+  --子文件：Wenqiu[个人文件，英文命名，颜色自定义]
+  --子文件结构如下：
+{
   Core/             项目核心通用资产
   Characters/       角色、动画、角色蓝图
   Maps/             关卡
@@ -53,6 +59,7 @@ Content/
   Audio/            音频
   VFX/              特效
   Developer/        个人测试内容，不建议长期保留
+}
 ```
 
 `Developer/` 目录只放个人实验内容，正式功能完成后应移动到正式目录。
@@ -63,12 +70,14 @@ Content/
 
 ### 1. 提交标题
 
-提交标题使用“图标 + 双引号主题”的形式，主题要简洁明确。
+提交标题使用“图标 + 双引号主题 + 版本序列号”的形式，版本序列号的递增。主题要简洁明确。
 
 示例：
 
 ```text
-✅“完成基础角色移动”
+*✅为特殊图形，它的示例：✅ 版本x.xx.x “更新提交规则”-2026515 --包含时间结尾，以下真实案例
+✅ 版本0.00.1 “更新和完善README.md文件”-2026515
+
 ⚠️“修复敌人追击逻辑但仍有边界问题”
 ❌“新增背包蓝图未测试”
 🍀“发布首个可运行Demo”
@@ -182,7 +191,7 @@ Unreal 资产使用“类型前缀 + 清晰名称”的形式。
 | 音效 | `SFX_` | `SFX_SwordHit` |
 | 音乐 | `BGM_` | `BGM_BattleTheme` |
 | 粒子 / Niagara | `NS_` | `NS_FireImpact` |
-| 关卡 | `L_` | `L_MainMenu` |
+| 关卡 | `Level_` | `Level_MainMenu` |
 | 输入动作 | `IA_` | `IA_Jump` |
 | 输入映射 | `IMC_` | `IMC_Player` |
 
@@ -192,7 +201,7 @@ Unreal 资产使用“类型前缀 + 清晰名称”的形式。
 | :-- | :-- | :-- |
 | 变量 | PascalCase 或清晰英文名 | `CurrentHealth` |
 | 布尔变量 | 使用 `b` 前缀 | `bIsDead` |
-| 函数 | 动词开头 | `ApplyDamage` |
+| 函数 | 前缀FU，下划线动词开头 | `FU_ApplyDamage` |
 | 事件 | `On` 开头 | `OnHealthChanged` |
 | 宏 | 描述用途 | `ClampHealthValue` |
 | 组件变量 | 类型或用途明确 | `HealthComponent` |
